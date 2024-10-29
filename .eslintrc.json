@@ -1,0 +1,36 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-unused-vars": [
+      "warn",
+      { "varsIgnorePattern": "^__wbg_|self|globalThis" }
+    ],
+    "no-extra-semi": "error",
+    "no-console": "off",
+    "no-restricted-globals": [
+      "error",
+      {
+        "name": "self",
+        "message": "Use window instead." // Custom message if you want to warn about 'self'
+      },
+      {
+        "name": "globalThis",
+        "message": "Use window instead." // Custom message if you want to warn about 'globalThis'
+      }
+    ]
+  },
+  "globals": {
+    "__wbg_test_invoke": "readonly",
+    "__wbg_test_output_writeln": "readonly",
+    "self": "readonly", // Allow 'self' as a global variable
+    "globalThis": "readonly" // Allow 'globalThis' as a global variable
+  }
+}
